@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import { Menu, X, Camera } from 'lucide-react'
+import { Menu, X, Crown } from 'lucide-react'
 
 const navLinks = [
   { path: '/', label: 'Home' },
@@ -20,13 +20,13 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           <Link to="/" className="flex items-center gap-3 no-underline">
-            <Camera className="w-8 h-8 text-gold" strokeWidth={1.5} />
+            <Crown className="w-8 h-8 text-gold" strokeWidth={1.5} />
             <div>
               <span className="font-serif text-2xl tracking-wide text-charcoal">
                 Amanda Upton
               </span>
               <span className="block text-[10px] tracking-[0.3em] uppercase text-taupe font-sans font-medium -mt-1">
-                Photography
+                Pageant Photography
               </span>
             </div>
           </Link>

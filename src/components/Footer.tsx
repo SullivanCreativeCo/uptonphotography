@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { Camera, Instagram, Facebook, Mail, MapPin, Phone } from 'lucide-react'
+import { Crown, Instagram, Facebook, Mail, MapPin, Phone } from 'lucide-react'
 
 export default function Footer() {
   return (
@@ -8,20 +8,20 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           <div>
             <div className="flex items-center gap-3 mb-6">
-              <Camera className="w-7 h-7 text-gold" strokeWidth={1.5} />
+              <Crown className="w-7 h-7 text-gold" strokeWidth={1.5} />
               <div>
                 <span className="font-serif text-xl tracking-wide text-cream">
                   Amanda Upton
                 </span>
                 <span className="block text-[9px] tracking-[0.3em] uppercase text-taupe font-sans -mt-1">
-                  Photography
+                  Pageant Photography
                 </span>
               </div>
             </div>
             <p className="text-sm text-taupe leading-relaxed max-w-xs">
-              Award-winning photographer with over 22 years of experience capturing
-              life's most beautiful moments. Certified by the New York Institute of
-              Photography.
+              Award-winning pageant photographer with over 22 years of experience.
+              Official photographer for Miss South Carolina, Miss American Coed,
+              Royalty USA Nationals, and more. Based in Union, SC — available nationwide.
             </p>
           </div>
 
@@ -30,9 +30,9 @@ export default function Footer() {
             <div className="space-y-3">
               {[
                 { to: '/about', label: 'About Amanda' },
-                { to: '/services', label: 'Services & Pricing' },
-                { to: '/portfolio', label: 'Portfolio' },
-                { to: '/booking', label: 'Book a Session' },
+                { to: '/services', label: 'Pageant Services & Pricing' },
+                { to: '/portfolio', label: 'Pageant Portfolio' },
+                { to: '/booking', label: 'Book a Headshot Session' },
                 { to: '/contact', label: 'Contact' },
               ].map((link) => (
                 <Link

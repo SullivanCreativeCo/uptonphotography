@@ -1,60 +1,81 @@
 import { Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
-import { ArrowRight, Star, Award, Camera, Heart, Users, Sparkles } from 'lucide-react'
+import { ArrowRight, Star, Camera, Heart, Users, Sparkles, Crown, Trophy } from 'lucide-react'
 import SectionHeading from '../components/SectionHeading'
 
 const services = [
   {
-    icon: Sparkles,
-    title: 'Pageant Photography',
+    icon: Crown,
+    title: 'Pageant Headshots',
     description:
-      'Capturing the sparkle and confidence of every contestant. From local titles to national stages, we make every moment shine.',
+      'Competition-ready headshots that capture your confidence, poise, and sparkle. From natural lighting to polished editorial looks — designed to make judges take notice.',
+  },
+  {
+    icon: Trophy,
+    title: 'Pageant Event Coverage',
+    description:
+      'Full event documentation from opening number to crowning moment. Next-day delivery through facial recognition galleries so contestants never miss a memory.',
+  },
+  {
+    icon: Sparkles,
+    title: 'Competition Prep Portfolios',
+    description:
+      'Build a stunning portfolio for your next competition. Multiple looks, outfit changes, and creative direction to showcase your range and personality.',
   },
   {
     icon: Camera,
     title: 'Headshots & Portraits',
     description:
-      'Professional headshots that highlight your natural beauty and unique personality. Perfect for competitions, portfolios, and personal branding.',
+      'Professional headshots for seniors, professionals, and personal branding. The same polished, editorial quality trusted by pageant competitors nationwide.',
   },
   {
     icon: Users,
     title: 'Senior Portraits',
     description:
-      'Celebrate this milestone with stunning portraits that capture your personality. A session as unique as you are.',
+      'Celebrate your senior year with a session that captures who you are. Many of our senior clients are also pageant contestants — we know how to bring out your best.',
   },
   {
     icon: Heart,
-    title: 'Wedding Photography',
+    title: 'Weddings & Events',
     description:
-      'Timeless, romantic wedding photography that tells your love story. From intimate ceremonies to grand celebrations.',
+      'Timeless wedding photography and special event coverage. The same attention to detail and storytelling that defines our pageant work.',
   },
+]
+
+const pageantEvents = [
+  'Miss South Carolina',
+  'Little Miss South Carolina',
+  'Miss American Coed',
+  'Royalty USA Nationals',
+  'Miss South Carolina Teen',
+  'And More Across the Nation',
 ]
 
 const testimonials = [
   {
     quote:
-      'Amanda has an incredible eye for capturing the perfect shot. She made me feel so comfortable and confident during my pageant headshot session. The results were absolutely stunning!',
+      'Amanda is THE pageant photographer. She knows exactly how to bring out your confidence in front of the camera. My headshots helped me stand out at Miss South Carolina, and her event coverage captured every moment I wanted to remember.',
     name: 'Sarah M.',
     role: 'Miss South Carolina Contestant',
   },
   {
     quote:
-      'We could not have asked for a better photographer for our wedding day. Amanda captured every emotion, every detail. Her photos are truly works of art that we will treasure forever.',
-    name: 'Jennifer & David',
-    role: 'Wedding Clients',
+      "As a pageant mom, I cannot say enough about Amanda. She makes every girl feel like a queen, whether it's their first local title or their fourth national competition. The next-day galleries at events are a game-changer.",
+    name: 'Jennifer T.',
+    role: 'Pageant Mom',
   },
   {
     quote:
-      "Amanda's senior portrait session was such a fun experience! She knew exactly how to bring out my personality in every shot. I received so many compliments on my photos.",
+      "I've worked with many photographers over my pageant career, but Amanda is on another level. She blends natural lighting with this polished editorial feel that's exactly what you need for competition headshots. She's my go-to, always.",
     name: 'Taylor R.',
-    role: 'Senior Portrait Client',
+    role: 'National Pageant Titleholder',
   },
 ]
 
 const stats = [
   { number: '22+', label: 'Years of Experience' },
+  { number: '100+', label: 'Pageant Events Covered' },
   { number: '5,000+', label: 'Sessions Completed' },
-  { number: '100+', label: 'Pageant Events' },
   { number: 'NYIP', label: 'Certified Photographer' },
 ]
 
@@ -62,10 +83,10 @@ export default function HomePage() {
   return (
     <>
       <Helmet>
-        <title>Amanda Upton Photography | Pageant, Portrait & Wedding Photographer</title>
+        <title>Amanda Upton Photography | Pageant Photographer - Headshots & Event Coverage</title>
         <meta
           name="description"
-          content="Award-winning photographer in Union, SC with 22+ years of experience. Specializing in pageant photography, headshots, senior portraits, and weddings."
+          content="Award-winning pageant photographer with 22+ years of experience. Official photographer for Miss South Carolina, Miss American Coed, Royalty USA Nationals. Headshots, event coverage, and competition portfolios. Union, SC."
         />
       </Helmet>
 
@@ -75,41 +96,60 @@ export default function HomePage() {
           className="absolute inset-0 bg-cover bg-center opacity-40"
           style={{
             backgroundImage:
-              'url(https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=2000&q=80)',
+              'url(https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=2000&q=80)',
           }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-charcoal/60 via-charcoal/40 to-charcoal/80" />
         <div className="relative z-10 text-center px-6 max-w-4xl">
           <span className="inline-block text-xs tracking-[0.4em] uppercase text-gold-light font-sans font-medium mb-6">
-            Award-Winning Photography
+            Official Pageant Photographer
           </span>
           <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl text-cream mb-6 leading-tight">
-            Capturing Your
-            <span className="block italic text-gold-light">Most Beautiful</span>
-            Moments
+            Where Confidence
+            <span className="block italic text-gold-light">Meets the Crown</span>
           </h1>
           <p className="text-cream/70 text-base md:text-lg max-w-xl mx-auto mb-10 font-light leading-relaxed">
-            With over 22 years of experience, Amanda Upton creates timeless images
-            that celebrate confidence, beauty, and life's most meaningful milestones.
+            With over 22 years behind the lens, Amanda Upton is the trusted photographer
+            for pageant competitors from local titles to national stages. Headshots,
+            event coverage, and competition portfolios that capture your sparkle.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               to="/booking"
               className="inline-flex items-center justify-center gap-2 bg-gold text-white px-8 py-3.5 text-xs tracking-[0.2em] uppercase font-sans font-medium hover:bg-gold-dark transition-colors no-underline"
             >
-              Book Your Session
+              Book Your Headshot Session
               <ArrowRight className="w-4 h-4" />
             </Link>
             <Link
               to="/portfolio"
               className="inline-flex items-center justify-center gap-2 border border-cream/30 text-cream px-8 py-3.5 text-xs tracking-[0.2em] uppercase font-sans font-medium hover:border-gold hover:text-gold transition-colors no-underline"
             >
-              View Portfolio
+              View Pageant Portfolio
             </Link>
           </div>
         </div>
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
           <div className="w-px h-12 bg-gradient-to-b from-transparent to-gold-light" />
+        </div>
+      </section>
+
+      {/* Pageant Events Banner */}
+      <section className="py-12 bg-gold/10 border-y border-gold/20">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <p className="text-center text-xs tracking-[0.3em] uppercase text-gold font-sans font-medium mb-6">
+            Trusted by Contestants & Organizations at
+          </p>
+          <div className="flex flex-wrap justify-center gap-x-10 gap-y-3">
+            {pageantEvents.map((event) => (
+              <span
+                key={event}
+                className="font-serif text-lg md:text-xl text-charcoal/80 italic"
+              >
+                {event}
+              </span>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -121,7 +161,7 @@ export default function HomePage() {
               <div className="aspect-[3/4] bg-cream-dark overflow-hidden">
                 <img
                   src="https://images.unsplash.com/photo-1554048612-b6a482bc67e5?auto=format&fit=crop&w=800&q=80"
-                  alt="Amanda Upton - Professional Photographer"
+                  alt="Amanda Upton - Professional Pageant Photographer"
                   className="w-full h-full object-cover"
                   loading="lazy"
                 />
@@ -130,33 +170,33 @@ export default function HomePage() {
             </div>
             <div>
               <span className="text-xs tracking-[0.3em] uppercase text-gold font-sans font-medium">
-                Nice to Meet You
+                The Photographer Behind the Crown
               </span>
               <h2 className="font-serif text-4xl md:text-5xl text-charcoal mt-3 mb-6">
                 I'm Amanda Upton
               </h2>
               <p className="text-charcoal-light text-sm leading-relaxed mb-4">
-                Photography has been a part of my life since I was a teenager. My mother was
-                a professional photographer — the first in our family — and I worked
-                alongside her in high school as her second shooter. That experience ignited
-                a passion that has only grown stronger over the past two decades.
+                I'm a second-generation photographer who found her true calling in the
+                world of pageantry. What started as a small studio in Union, South Carolina
+                in 2009 has grown into a career photographing some of the biggest pageant
+                stages in the country.
               </p>
               <p className="text-charcoal-light text-sm leading-relaxed mb-4">
-                In 2009, I officially opened my own studio in Union, South Carolina,
-                starting by photographing families, seniors, and children. As my business
-                grew, I found my niche in the world of pageantry — capturing headshots
-                and covering major pageant events across the nation.
+                From Miss South Carolina and Little Miss South Carolina to Miss American
+                Coed and Royalty USA Nationals, I've had the honor of capturing headshots
+                and covering events for contestants at every level — from their very first
+                local title to the national stage.
               </p>
               <p className="text-charcoal-light text-sm leading-relaxed mb-8">
-                I'm a second-generation professional photographer, certified by the New York
-                Institute of Photography and a proud member of the Professional Photographers
-                of America. It is my honor to capture your most meaningful moments.
+                My headshot style blends natural lighting with a polished editorial feel,
+                and I bring a calm, encouraging energy to every session — because in
+                pageants, confidence is everything, and that starts in front of my camera.
               </p>
               <Link
                 to="/about"
                 className="inline-flex items-center gap-2 text-xs tracking-[0.2em] uppercase text-gold font-sans font-medium hover:text-gold-dark transition-colors no-underline"
               >
-                Learn More About Me
+                Read My Full Story
                 <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
@@ -185,10 +225,10 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <SectionHeading
             subtitle="What I Offer"
-            title="Services"
-            description="From pageant stages to wedding altars, I specialize in capturing the moments that matter most. Each session is tailored to tell your unique story."
+            title="Pageant Photography & Beyond"
+            description="Pageant headshots and event coverage are my specialty — but I also bring that same polished, editorial eye to senior portraits, weddings, and more."
           />
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service) => (
               <div
                 key={service.title}
@@ -214,22 +254,22 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Portfolio Preview */}
+      {/* Pageant Portfolio Preview */}
       <section className="py-24 bg-cream">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <SectionHeading
             subtitle="Recent Work"
-            title="Portfolio"
-            description="A glimpse into the stories I've had the privilege of telling through my lens."
+            title="Pageant Portfolio"
+            description="A glimpse of the headshots, stage moments, and crowning celebrations I've had the honor of capturing."
           />
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
             {[
-              { src: 'https://images.unsplash.com/photo-1595959183082-7b570b7e1e2b?auto=format&fit=crop&w=600&q=80', alt: 'Pageant headshot' },
-              { src: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80', alt: 'Portrait session' },
-              { src: 'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=600&q=80', alt: 'Wedding photography' },
-              { src: 'https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?auto=format&fit=crop&w=600&q=80', alt: 'Beauty portrait' },
-              { src: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=600&q=80', alt: 'Professional headshot' },
-              { src: 'https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=600&q=80', alt: 'Wedding celebration' },
+              { src: 'https://images.unsplash.com/photo-1595959183082-7b570b7e1e2b?auto=format&fit=crop&w=600&q=80', alt: 'Pageant headshot session' },
+              { src: 'https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=600&q=80', alt: 'Pageant stage photography' },
+              { src: 'https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?auto=format&fit=crop&w=600&q=80', alt: 'Competition beauty portrait' },
+              { src: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80', alt: 'Editorial pageant headshot' },
+              { src: 'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=600&q=80', alt: 'Pageant contestant portfolio' },
+              { src: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=600&q=80', alt: 'Natural lighting pageant headshot' },
             ].map((img, i) => (
               <div key={i} className="aspect-[3/4] overflow-hidden group cursor-pointer">
                 <img
@@ -253,13 +293,54 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Why Pageant Contestants Choose Amanda */}
+      <section className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <SectionHeading
+            subtitle="The Amanda Difference"
+            title="Why Pageant Contestants Choose Me"
+            description="Every detail matters when you're competing. Here's what sets my pageant photography apart."
+          />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              {
+                icon: Crown,
+                title: 'Pageant Expertise',
+                desc: 'Over a decade specializing in pageant photography. I understand what judges look for and how to showcase your best qualities.',
+              },
+              {
+                icon: Camera,
+                title: 'Editorial Style',
+                desc: 'My signature look blends natural lighting with polished editorial quality — confident, powerful, and authentically you.',
+              },
+              {
+                icon: Sparkles,
+                title: 'Next-Day Galleries',
+                desc: 'At multi-day events, my team delivers next-day galleries using facial recognition technology. Your moments, fast.',
+              },
+              {
+                icon: Heart,
+                title: 'Confidence-Building',
+                desc: 'I bring calm, encouraging energy to every session. Confidence is key in pageantry, and it starts in front of my camera.',
+              },
+            ].map((item) => (
+              <div key={item.title} className="text-center p-6">
+                <item.icon className="w-10 h-10 text-gold mx-auto mb-5" strokeWidth={1.5} />
+                <h3 className="font-serif text-xl text-charcoal mb-3">{item.title}</h3>
+                <p className="text-charcoal-light text-sm leading-relaxed">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Testimonials */}
       <section className="py-24 bg-charcoal">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <SectionHeading
-            subtitle="Kind Words"
-            title="Client Testimonials"
-            description="Nothing makes me happier than hearing from clients who love their photos."
+            subtitle="From the Pageant Community"
+            title="What Contestants Say"
+            description="Hear from the queens, contestants, and pageant families who trust me with their most important moments."
             light
           />
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -288,21 +369,32 @@ export default function HomePage() {
       {/* CTA */}
       <section className="py-24 bg-blush/40">
         <div className="max-w-3xl mx-auto px-6 lg:px-8 text-center">
-          <Award className="w-12 h-12 text-gold mx-auto mb-6" strokeWidth={1} />
+          <Crown className="w-12 h-12 text-gold mx-auto mb-6" strokeWidth={1} />
           <h2 className="font-serif text-4xl md:text-5xl text-charcoal mb-6">
-            Ready to Book Your Session?
+            Ready for Your Crown-Worthy Headshots?
           </h2>
           <p className="text-charcoal-light text-sm leading-relaxed mb-10 max-w-lg mx-auto">
-            Whether you're preparing for a pageant, celebrating a milestone, or saying "I do,"
-            I'd love to be part of your story. Let's create something beautiful together.
+            Whether you're preparing for your first pageant or your next national title,
+            I'd love to help you put your best face forward. Let's create headshots that
+            capture your confidence and make a lasting impression.
           </p>
-          <Link
-            to="/booking"
-            className="inline-flex items-center gap-2 bg-gold text-white px-10 py-4 text-xs tracking-[0.2em] uppercase font-sans font-medium hover:bg-gold-dark transition-colors no-underline"
-          >
-            Book Your Session
-            <ArrowRight className="w-4 h-4" />
-          </Link>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link
+              to="/booking"
+              className="inline-flex items-center gap-2 bg-gold text-white px-10 py-4 text-xs tracking-[0.2em] uppercase font-sans font-medium hover:bg-gold-dark transition-colors no-underline"
+            >
+              Book Your Session
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+            <a
+              href="https://www.uptonphoto.com/book-online"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 border border-charcoal/30 text-charcoal px-10 py-4 text-xs tracking-[0.2em] uppercase font-sans font-medium hover:border-gold hover:text-gold transition-colors no-underline"
+            >
+              Book Online Directly
+            </a>
+          </div>
         </div>
       </section>
     </>

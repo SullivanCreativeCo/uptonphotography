@@ -22,10 +22,10 @@ export default function ContactPage() {
   return (
     <>
       <Helmet>
-        <title>Contact | Amanda Upton Photography</title>
+        <title>Contact | Amanda Upton Photography - Pageant Photographer</title>
         <meta
           name="description"
-          content="Get in touch with Amanda Upton Photography. Based in Union, South Carolina. Available for pageant photography, headshots, portraits, and weddings."
+          content="Contact Amanda Upton Photography for pageant headshots, event coverage, competition portfolios, and more. Based in Union, SC — available nationwide for pageant events."
         />
       </Helmet>
 
@@ -33,9 +33,9 @@ export default function ContactPage() {
       <section className="pt-32 pb-16 bg-cream">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <SectionHeading
-            subtitle="Say Hello"
+            subtitle="Let's Connect"
             title="Get in Touch"
-            description="I'd love to hear from you! Whether you have a question, want to discuss a session, or just want to say hello, don't hesitate to reach out."
+            description="Whether you need competition headshots, event coverage for your pageant organization, or just want to learn more — I'd love to hear from you."
           />
         </div>
       </section>
@@ -47,12 +47,13 @@ export default function ContactPage() {
             {/* Contact Info */}
             <div>
               <h3 className="font-serif text-3xl text-charcoal mb-6">
-                Let's Connect
+                Let's Talk Pageants
               </h3>
               <p className="text-charcoal-light text-sm leading-relaxed mb-8">
                 I'm based in Union, South Carolina, but I travel regularly for pageant events
-                and sessions across the Southeast. Whether you're local or need a destination
-                photographer, I'm here for you.
+                across the Southeast and nationwide. Whether you're a contestant looking for
+                headshots, a pageant director needing event coverage, or a family celebrating
+                a milestone — I'm here for you.
               </p>
 
               <div className="space-y-6 mb-10">
@@ -76,6 +77,7 @@ export default function ContactPage() {
                   <div>
                     <p className="text-xs tracking-[0.2em] uppercase text-taupe font-sans">Location</p>
                     <p className="text-sm font-medium text-charcoal">Union, South Carolina</p>
+                    <p className="text-xs text-taupe">Available nationwide for pageant events</p>
                   </div>
                 </div>
 
@@ -171,7 +173,7 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <label className="block text-xs tracking-[0.15em] uppercase text-taupe font-sans mb-2">
-                        Session Type
+                        What Are You Looking For?
                       </label>
                       <select
                         value={formData.sessionType}
@@ -180,11 +182,11 @@ export default function ContactPage() {
                       >
                         <option value="">Select a session type...</option>
                         <option value="pageant-headshots">Pageant Headshots</option>
+                        <option value="pageant-event">Pageant Event Coverage</option>
+                        <option value="competition-portfolio">Competition Prep Portfolio</option>
                         <option value="senior-portraits">Senior Portraits</option>
                         <option value="wedding">Wedding Photography</option>
                         <option value="headshots">Professional Headshots</option>
-                        <option value="fashion">Fashion & Editorial</option>
-                        <option value="event">Event Coverage</option>
                         <option value="other">Other / Not Sure</option>
                       </select>
                     </div>
@@ -198,7 +200,7 @@ export default function ContactPage() {
                         value={formData.message}
                         onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                         className="w-full border border-cream-dark bg-white px-4 py-3 text-sm text-charcoal focus:outline-none focus:border-gold transition-colors resize-none"
-                        placeholder="Tell me about your vision, the date you have in mind, and any details you'd like to share..."
+                        placeholder="Tell me about your upcoming competition, the look you're going for, and any dates you have in mind..."
                       />
                     </div>
                     <button

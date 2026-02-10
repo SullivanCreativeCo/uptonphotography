@@ -2,21 +2,24 @@ import { useState } from 'react'
 import { Helmet } from 'react-helmet-async'
 import SectionHeading from '../components/SectionHeading'
 
-const categories = ['All', 'Pageant', 'Portraits', 'Weddings', 'Fashion', 'Events']
+const categories = ['All', 'Pageant Headshots', 'Pageant Events', 'Seniors', 'Weddings', 'Portraits']
 
 const galleryImages = [
-  { src: 'https://images.unsplash.com/photo-1595959183082-7b570b7e1e2b?auto=format&fit=crop&w=800&q=80', alt: 'Pageant headshot', category: 'Pageant' },
-  { src: 'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80', alt: 'Wedding ceremony', category: 'Weddings' },
-  { src: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80', alt: 'Fashion editorial', category: 'Fashion' },
-  { src: 'https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?auto=format&fit=crop&w=800&q=80', alt: 'Beauty portrait', category: 'Portraits' },
+  { src: 'https://images.unsplash.com/photo-1595959183082-7b570b7e1e2b?auto=format&fit=crop&w=800&q=80', alt: 'Pageant competition headshot', category: 'Pageant Headshots' },
+  { src: 'https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=800&q=80', alt: 'Pageant stage moment', category: 'Pageant Events' },
+  { src: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80', alt: 'Editorial pageant headshot', category: 'Pageant Headshots' },
+  { src: 'https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?auto=format&fit=crop&w=800&q=80', alt: 'Pageant beauty portrait', category: 'Pageant Headshots' },
+  { src: 'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=800&q=80', alt: 'Competition portfolio shot', category: 'Pageant Headshots' },
+  { src: 'https://images.unsplash.com/photo-1460978812857-470ed1c77af0?auto=format&fit=crop&w=800&q=80', alt: 'Backstage pageant preparation', category: 'Pageant Events' },
+  { src: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=800&q=80', alt: 'Natural lighting pageant headshot', category: 'Pageant Headshots' },
+  { src: 'https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=800&q=80', alt: 'Crowning celebration', category: 'Pageant Events' },
   { src: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=800&q=80', alt: 'Professional headshot', category: 'Portraits' },
-  { src: 'https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=800&q=80', alt: 'Event celebration', category: 'Events' },
-  { src: 'https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=800&q=80', alt: 'Pageant stage', category: 'Pageant' },
+  { src: 'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80', alt: 'Wedding ceremony', category: 'Weddings' },
   { src: 'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=800&q=80', alt: 'Wedding couple', category: 'Weddings' },
-  { src: 'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=800&q=80', alt: 'Fashion portrait', category: 'Fashion' },
-  { src: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=800&q=80', alt: 'Natural portrait', category: 'Portraits' },
-  { src: 'https://images.unsplash.com/photo-1460978812857-470ed1c77af0?auto=format&fit=crop&w=800&q=80', alt: 'Pageant preparation', category: 'Pageant' },
   { src: 'https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?auto=format&fit=crop&w=800&q=80', alt: 'Wedding details', category: 'Weddings' },
+  { src: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=800&q=80', alt: 'Senior portrait', category: 'Seniors' },
+  { src: 'https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=800&q=80', alt: 'Senior portrait session', category: 'Seniors' },
+  { src: 'https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?auto=format&fit=crop&w=800&q=80', alt: 'Pageant contestant on stage', category: 'Pageant Events' },
 ]
 
 export default function PortfolioPage() {
@@ -30,10 +33,10 @@ export default function PortfolioPage() {
   return (
     <>
       <Helmet>
-        <title>Portfolio | Amanda Upton Photography</title>
+        <title>Portfolio | Amanda Upton Photography - Pageant Headshots & Event Photography</title>
         <meta
           name="description"
-          content="Browse the portfolio of Amanda Upton Photography. Featuring pageant photography, headshots, senior portraits, weddings, and fashion editorials."
+          content="Browse Amanda Upton's pageant photography portfolio. Pageant headshots, event coverage, crowning moments, senior portraits, and weddings. Miss South Carolina, Miss American Coed, and more."
         />
       </Helmet>
 
@@ -42,8 +45,8 @@ export default function PortfolioPage() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <SectionHeading
             subtitle="My Work"
-            title="Portfolio"
-            description="A collection of stories told through my lens. Each image represents a moment of beauty, confidence, and connection."
+            title="Pageant Portfolio & Gallery"
+            description="From competition headshots and stage moments to senior portraits and weddings — a collection of the stories I've had the honor of capturing."
           />
         </div>
       </section>
@@ -99,7 +102,8 @@ export default function PortfolioPage() {
             Want to See More?
           </h2>
           <p className="text-charcoal-light text-sm leading-relaxed mb-6">
-            Visit my full client galleries on Zenfolio or follow me on Instagram for the latest work.
+            Visit my full client galleries on Zenfolio or follow me on Instagram for the latest
+            pageant headshots, event coverage, and behind-the-scenes moments.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a

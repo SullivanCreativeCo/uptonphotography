@@ -1,6 +1,6 @@
 import { Helmet } from 'react-helmet-async'
 import { Link } from 'react-router-dom'
-import { ArrowRight, Award, BookOpen, Heart, Camera } from 'lucide-react'
+import { ArrowRight, Award, BookOpen, Heart, Camera, Crown, Sparkles, Trophy } from 'lucide-react'
 import SectionHeading from '../components/SectionHeading'
 
 const credentials = [
@@ -20,9 +20,32 @@ const credentials = [
     description: 'Second-generation photographer with over two decades of experience',
   },
   {
-    icon: Heart,
+    icon: Trophy,
     title: 'Award-Winning',
     description: 'Recognized nationally and internationally in publications and competitions',
+  },
+]
+
+const pageantHighlights = [
+  {
+    icon: Crown,
+    title: 'Miss South Carolina',
+    description: 'Official event photographer capturing every moment from preliminary to crowning.',
+  },
+  {
+    icon: Crown,
+    title: 'Little Miss South Carolina',
+    description: 'Documenting the youngest stars as they take their first steps on the pageant stage.',
+  },
+  {
+    icon: Crown,
+    title: 'Miss American Coed',
+    description: 'National-level event coverage and contestant headshots for one of the country\'s premier pageants.',
+  },
+  {
+    icon: Crown,
+    title: 'Royalty USA Nationals',
+    description: 'Capturing the sparkle and excitement of national-level competition from coast to coast.',
   },
 ]
 
@@ -30,10 +53,10 @@ export default function AboutPage() {
   return (
     <>
       <Helmet>
-        <title>About Amanda | Amanda Upton Photography</title>
+        <title>About Amanda | Amanda Upton Photography - Pageant Photographer</title>
         <meta
           name="description"
-          content="Meet Amanda Upton - a second-generation photographer with 22+ years of experience, NYIP certified, and PPA member. Based in Union, South Carolina."
+          content="Meet Amanda Upton - a second-generation photographer who found her niche in pageant photography. 22+ years of experience, NYIP certified. Official photographer for Miss South Carolina, Miss American Coed, and more."
         />
       </Helmet>
 
@@ -41,9 +64,9 @@ export default function AboutPage() {
       <section className="pt-32 pb-16 bg-cream">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <SectionHeading
-            subtitle="Get to Know Me"
+            subtitle="The Photographer Behind the Crown"
             title="About Amanda"
-            description="A second-generation photographer with a passion for capturing beauty, confidence, and life's most meaningful moments."
+            description="A second-generation photographer who found her calling in the world of pageantry — capturing confidence, beauty, and crowning moments on stages across the nation."
           />
         </div>
       </section>
@@ -55,7 +78,7 @@ export default function AboutPage() {
             <div>
               <img
                 src="https://images.unsplash.com/photo-1554048612-b6a482bc67e5?auto=format&fit=crop&w=800&q=80"
-                alt="Amanda Upton photographing"
+                alt="Amanda Upton - Pageant Photographer"
                 className="w-full aspect-[3/4] object-cover"
                 loading="lazy"
               />
@@ -65,35 +88,35 @@ export default function AboutPage() {
                 My Story
               </span>
               <h2 className="font-serif text-4xl text-charcoal mt-3 mb-6">
-                Where It All Began
+                From Second Shooter to Pageant Photographer
               </h2>
               <div className="space-y-4 text-charcoal-light text-sm leading-relaxed">
                 <p>
                   Photography has been woven into the fabric of my life since I was a teenager.
                   My mother was a professional photographer — the first in our family — and
-                  I spent my high school years working alongside her as her second shooter.
-                  Those early days behind the lens taught me not just the technical aspects of
-                  photography, but the art of connecting with people and telling their stories
-                  through images.
+                  I spent my high school years working alongside her as her second shooter,
+                  photographing everything from school pictures and studio sessions to weddings
+                  and class reunions.
                 </p>
                 <p>
                   In 2009, I took the leap and officially opened my own studio in Union,
                   South Carolina. I started by photographing families, seniors, and children
-                  in my community. As my work gained recognition and my client base grew, I
-                  discovered my true calling in the world of pageantry.
+                  in my community. But as my work gained recognition and my client base grew,
+                  I discovered my true passion — the world of pageantry.
                 </p>
                 <p>
-                  Today, I'm known for capturing headshots and covering major pageant events
-                  across the nation — from Miss South Carolina and Little Miss South Carolina
-                  to Miss American Coed and Royalty USA Nationals. Whether it's the sparkle
-                  in a contestant's eye during their crowning moment or the quiet confidence
-                  of a professional headshot, I strive to capture the essence of every person
-                  who steps in front of my camera.
+                  What began as a few headshot sessions for local contestants quickly evolved
+                  into a specialty. Today, I'm known as a go-to photographer for pageant
+                  competitors across the country. I photograph major events like Miss South
+                  Carolina, Little Miss South Carolina, Miss American Coed, and Royalty USA
+                  Nationals — capturing everything from headshots and stage moments to the
+                  crowning celebration.
                 </p>
                 <p>
-                  Beyond pageantry, I continue to pour my heart into wedding photography,
-                  senior portraits, and fashion shoots. Every session is an opportunity to
-                  create art and forge lasting connections.
+                  My headshot style blends natural lighting with a polished editorial feel.
+                  I want every client to look confident, powerful, and authentic. I bring a
+                  calm, encouraging energy to every session — especially important in pageants,
+                  where confidence is key and it starts in front of my camera.
                 </p>
               </div>
             </div>
@@ -101,8 +124,68 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Credentials */}
+      {/* Pageant Highlights */}
       <section className="py-20 bg-blush/30">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <SectionHeading
+            subtitle="On the Pageant Stage"
+            title="Events I Photograph"
+            description="From local titles to national stages, I've had the honor of covering some of the biggest pageant events in the country."
+          />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {pageantHighlights.map((event) => (
+              <div key={event.title} className="bg-white p-8 text-center">
+                <event.icon className="w-10 h-10 text-gold mx-auto mb-5" strokeWidth={1.5} />
+                <h3 className="font-serif text-xl text-charcoal mb-2">{event.title}</h3>
+                <p className="text-charcoal-light text-sm">{event.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* What Sets My Pageant Work Apart */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <SectionHeading
+            subtitle="My Approach"
+            title="What Sets My Pageant Work Apart"
+            description="I don't just take photos at pageants — I understand the world of pageantry."
+          />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-5xl mx-auto">
+            <div className="text-center">
+              <Sparkles className="w-10 h-10 text-gold mx-auto mb-5" strokeWidth={1.5} />
+              <h3 className="font-serif text-xl text-charcoal mb-3">Competition-Ready Headshots</h3>
+              <p className="text-charcoal-light text-sm leading-relaxed">
+                I understand what judges look for. My headshots are designed to highlight your
+                best features with a polished editorial style that stands out in any competition
+                book or program.
+              </p>
+            </div>
+            <div className="text-center">
+              <Camera className="w-10 h-10 text-gold mx-auto mb-5" strokeWidth={1.5} />
+              <h3 className="font-serif text-xl text-charcoal mb-3">Next-Day Event Galleries</h3>
+              <p className="text-charcoal-light text-sm leading-relaxed">
+                At multi-day events, my team delivers galleries the very next day using facial
+                recognition technology. Contestants and families can find and relive their
+                moments before they even leave the venue.
+              </p>
+            </div>
+            <div className="text-center">
+              <Heart className="w-10 h-10 text-gold mx-auto mb-5" strokeWidth={1.5} />
+              <h3 className="font-serif text-xl text-charcoal mb-3">Confidence Behind the Lens</h3>
+              <p className="text-charcoal-light text-sm leading-relaxed">
+                Pageantry is about confidence, and that starts in the photo session. I create
+                a calm, encouraging environment where every contestant — from first-timers to
+                seasoned pros — feels empowered and beautiful.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Credentials */}
+      <section className="py-20 bg-cream">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <SectionHeading
             subtitle="Credentials"
@@ -128,21 +211,22 @@ export default function AboutPage() {
             My Philosophy
           </span>
           <h2 className="font-serif text-4xl text-cream mt-3 mb-6">
-            More Than Just Photos
+            Every Contestant Has a Crown-Worthy Story
           </h2>
           <p className="text-cream/70 text-sm leading-relaxed mb-4">
-            I believe that every person has a story worth telling and a beauty worth
-            capturing. My approach combines technical expertise with genuine warmth and
-            connection, creating an experience that allows your true self to shine through.
+            I believe every person who steps on a pageant stage — or in front of my camera —
+            has a story worth telling and a beauty worth capturing. Whether you're a tiny miss
+            competing for the first time or a seasoned queen chasing a national title, my job
+            is to capture the essence of who you are: confident, radiant, and authentically you.
           </p>
           <p className="text-cream/70 text-sm leading-relaxed mb-4">
-            Whether you're a first-time pageant contestant or a seasoned competitor,
-            a nervous bride or a confident senior, my goal is to make you feel comfortable,
-            empowered, and beautiful in front of the camera.
+            Beyond pageantry, I bring the same philosophy to every senior portrait, every wedding,
+            every headshot session. The result? Images that don't just capture how you looked,
+            but how you felt.
           </p>
           <p className="text-cream/70 text-sm leading-relaxed">
-            The result? Images that don't just capture how you looked, but how you felt —
-            confident, radiant, and authentically you.
+            After more than two decades behind the lens, this is still my greatest honor —
+            being trusted with your most meaningful moments.
           </p>
         </div>
       </section>
@@ -151,10 +235,11 @@ export default function AboutPage() {
       <section className="py-20 bg-cream">
         <div className="max-w-3xl mx-auto px-6 lg:px-8 text-center">
           <h2 className="font-serif text-4xl text-charcoal mb-6">
-            Let's Create Something Beautiful
+            Ready to Book Your Pageant Headshots?
           </h2>
           <p className="text-charcoal-light text-sm leading-relaxed mb-8">
-            I'd love to hear about your vision and how we can bring it to life together.
+            Whether you need competition headshots, event coverage, or a full portfolio session,
+            I'd love to help you put your best face forward.
           </p>
           <Link
             to="/booking"
