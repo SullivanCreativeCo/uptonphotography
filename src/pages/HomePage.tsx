@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
-import { Helmet } from 'react-helmet-async'
 import { ArrowRight, Star, Camera, Heart, Users, Sparkles, Crown, Trophy } from 'lucide-react'
+import { useDocumentTitle } from '../hooks/useDocumentTitle'
 import SectionHeading from '../components/SectionHeading'
 
 const services = [
@@ -80,16 +80,10 @@ const stats = [
 ]
 
 export default function HomePage() {
+  useDocumentTitle('Amanda Upton Photography | Pageant Photographer - Headshots & Event Coverage')
+
   return (
     <>
-      <Helmet>
-        <title>Amanda Upton Photography | Pageant Photographer - Headshots & Event Coverage</title>
-        <meta
-          name="description"
-          content="Award-winning pageant photographer with 22+ years of experience. Official photographer for Miss South Carolina, Miss American Coed, Royalty USA Nationals. Headshots, event coverage, and competition portfolios. Union, SC."
-        />
-      </Helmet>
-
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center bg-charcoal overflow-hidden">
         <div

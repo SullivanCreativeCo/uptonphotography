@@ -1,4 +1,4 @@
-import { Helmet } from 'react-helmet-async'
+import { useDocumentTitle } from '../hooks/useDocumentTitle'
 import { Clock, DollarSign, Heart, Sparkles, Users, Crown, Trophy, Camera } from 'lucide-react'
 import SectionHeading from '../components/SectionHeading'
 
@@ -54,16 +54,10 @@ const otherSessions = [
 ]
 
 export default function BookingPage() {
+  useDocumentTitle('Book a Session | Amanda Upton Photography - Pageant Headshots & More')
+
   return (
     <>
-      <Helmet>
-        <title>Book a Session | Amanda Upton Photography - Pageant Headshots & More</title>
-        <meta
-          name="description"
-          content="Book your pageant headshot session with Amanda Upton Photography. Competition headshots starting at $199. Event coverage, portfolios, seniors, and weddings."
-        />
-      </Helmet>
-
       {/* Hero */}
       <section className="pt-32 pb-16 bg-cream">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">

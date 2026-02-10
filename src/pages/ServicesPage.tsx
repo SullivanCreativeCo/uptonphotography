@@ -1,5 +1,5 @@
-import { Helmet } from 'react-helmet-async'
 import { Link } from 'react-router-dom'
+import { useDocumentTitle } from '../hooks/useDocumentTitle'
 import { ArrowRight, Clock, Image, Check, Crown } from 'lucide-react'
 import SectionHeading from '../components/SectionHeading'
 
@@ -115,16 +115,10 @@ export default function ServicesPage() {
   const featuredServices = services.filter((s) => s.featured)
   const otherServices = services.filter((s) => !s.featured)
 
+  useDocumentTitle('Services & Pricing | Amanda Upton Photography - Pageant Headshots & Event Coverage')
+
   return (
     <>
-      <Helmet>
-        <title>Services & Pricing | Amanda Upton Photography - Pageant Headshots & Event Coverage</title>
-        <meta
-          name="description"
-          content="Pageant headshots starting at $199. Event coverage, competition portfolios, senior portraits, weddings. Official pageant photographer for Miss South Carolina, Miss American Coed, and more."
-        />
-      </Helmet>
-
       {/* Hero */}
       <section className="pt-32 pb-16 bg-cream">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">

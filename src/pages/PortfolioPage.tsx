@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Helmet } from 'react-helmet-async'
+import { useDocumentTitle } from '../hooks/useDocumentTitle'
 import SectionHeading from '../components/SectionHeading'
 
 const categories = ['All', 'Pageant Headshots', 'Pageant Events', 'Seniors', 'Weddings', 'Portraits']
@@ -25,6 +25,8 @@ const galleryImages = [
 export default function PortfolioPage() {
   const [activeCategory, setActiveCategory] = useState('All')
 
+  useDocumentTitle('Portfolio | Amanda Upton Photography - Pageant Headshots & Event Photography')
+
   const filteredImages =
     activeCategory === 'All'
       ? galleryImages
@@ -32,14 +34,6 @@ export default function PortfolioPage() {
 
   return (
     <>
-      <Helmet>
-        <title>Portfolio | Amanda Upton Photography - Pageant Headshots & Event Photography</title>
-        <meta
-          name="description"
-          content="Browse Amanda Upton's pageant photography portfolio. Pageant headshots, event coverage, crowning moments, senior portraits, and weddings. Miss South Carolina, Miss American Coed, and more."
-        />
-      </Helmet>
-
       {/* Hero */}
       <section className="pt-32 pb-16 bg-cream">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">

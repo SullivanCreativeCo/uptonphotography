@@ -1,5 +1,5 @@
-import { Helmet } from 'react-helmet-async'
 import { Link } from 'react-router-dom'
+import { useDocumentTitle } from '../hooks/useDocumentTitle'
 import { ArrowRight, Award, BookOpen, Heart, Camera, Crown, Sparkles, Trophy } from 'lucide-react'
 import SectionHeading from '../components/SectionHeading'
 
@@ -50,16 +50,10 @@ const pageantHighlights = [
 ]
 
 export default function AboutPage() {
+  useDocumentTitle('About Amanda | Amanda Upton Photography - Pageant Photographer')
+
   return (
     <>
-      <Helmet>
-        <title>About Amanda | Amanda Upton Photography - Pageant Photographer</title>
-        <meta
-          name="description"
-          content="Meet Amanda Upton - a second-generation photographer who found her niche in pageant photography. 22+ years of experience, NYIP certified. Official photographer for Miss South Carolina, Miss American Coed, and more."
-        />
-      </Helmet>
-
       {/* Hero */}
       <section className="pt-32 pb-16 bg-cream">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">

@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import type { FormEvent } from 'react'
-import { Helmet } from 'react-helmet-async'
+import { useDocumentTitle } from '../hooks/useDocumentTitle'
 import { Mail, MapPin, Phone, Instagram, Facebook, Send } from 'lucide-react'
 import SectionHeading from '../components/SectionHeading'
 
@@ -19,16 +19,10 @@ export default function ContactPage() {
     setSubmitted(true)
   }
 
+  useDocumentTitle('Contact | Amanda Upton Photography - Pageant Photographer')
+
   return (
     <>
-      <Helmet>
-        <title>Contact | Amanda Upton Photography - Pageant Photographer</title>
-        <meta
-          name="description"
-          content="Contact Amanda Upton Photography for pageant headshots, event coverage, competition portfolios, and more. Based in Union, SC — available nationwide for pageant events."
-        />
-      </Helmet>
-
       {/* Hero */}
       <section className="pt-32 pb-16 bg-cream">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
